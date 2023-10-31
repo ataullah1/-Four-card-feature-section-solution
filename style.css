@@ -1,0 +1,248 @@
+:root {
+  --font-poppins: 'Poppins', sans-serif;
+
+  /* ## Primary */
+  --red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+
+  /* ### Neutral */
+
+  --very-Dark-Blue: hsl(234, 12%, 34%);
+  --grayish-Blue: hsl(229, 6%, 66%);
+  --very-Light-Gray: hsl(0, 0%, 98%);
+}
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--very-Light-Gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: var(--font-poppins);
+}
+.main {
+  width: 100%;
+}
+.header {
+  width: 500px;
+  margin: 0 auto;
+  animation: load_hed 2.2s ease-in-out;
+}
+@keyframes load_hed {
+  0% {
+    opacity: 0;
+    transform: translateX(-1000px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+.main .fst {
+  font-weight: 200;
+  color: var(--grayish-Blue);
+}
+.main .sec {
+  font-weight: 600;
+  color: var(--very-Dark-Blue);
+}
+#head_p {
+  padding: 20px 0 50px 0;
+  font-weight: 400;
+}
+p {
+  color: var(--grayish-Blue);
+  font-size: 15px;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+  grid-template-areas:
+    'a b d'
+    'a c d';
+}
+.container .card h3 {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--very-Dark-Blue);
+}
+.container .card p {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 400;
+  padding: 5px 0px 35px 0px;
+}
+.card {
+  width: auto;
+  padding: 20px 30px;
+  background-color: var(--very-Light-Gray);
+  box-shadow: 0px 14px 18px -2px rgba(218, 228, 240, 1);
+  border-radius: 6px;
+}
+.card img {
+  width: 50px;
+  float: right;
+}
+.div_1 {
+  grid-area: a;
+  align-self: center;
+  border-top: 4px solid var(--Cyan);
+  animation: load_animation_1 1.7s ease-in;
+}
+@keyframes load_animation_1 {
+  0% {
+    opacity: 0;
+    transform: translateY(-500px) rotate(360deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+.div_2 {
+  grid-area: b;
+  border-top: 4px solid var(--red);
+  animation: load_animation_2 1.4s ease-in;
+}
+@keyframes load_animation_2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.div_3 {
+  grid-area: c;
+  border-top: 4px solid var(--orange);
+  animation: load_animation_3 1s ease-in;
+}
+@keyframes load_animation_3 {
+  0% {
+    opacity: 0;
+    transform: translateY(-500px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.div_4 {
+  grid-area: d;
+  align-self: center;
+  border-top: 4px solid var(--blue);
+  animation: load_animation_4 1.7s ease-in;
+}
+@keyframes load_animation_4 {
+  0% {
+    opacity: 0;
+    transform: translateY(-500px) rotate(-360deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+.attribution {
+  font-size: 80%;
+  margin-top: 30px;
+  /* border: 1px solid rgb(221, 215, 215); */
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+.attribution span {
+  color: red;
+}
+
+@media (max-width: 900px) {
+  .container {
+    width: 660px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      'a b'
+      'c d';
+  }
+}
+@media (max-width: 650px) {
+  .header {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .main .fst,
+  .sec {
+    font-size: 25px;
+  }
+
+  #head_p {
+    padding: 10px 0 40px 0;
+    font-size: 15px;
+  }
+  .main {
+    margin: auto;
+  }
+  .container {
+    width: 300px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      'a'
+      'b'
+      'c'
+      'd';
+  }
+}
+@media (max-width: 405px) {
+  .main {
+    width: 300px;
+  }
+  .header {
+    width: auto;
+  }
+  .main .fst,
+  .sec {
+    font-size: 22px;
+  }
+
+  #head_p {
+    padding: 10px 0 40px 0;
+    font-size: 12px;
+  }
+  .container {
+    width: auto;
+  }
+}
+@media (max-width: 310px) {
+  .main {
+    width: 95%;
+  }
+  .main .fst,
+  .sec {
+    font-size: 100%;
+  }
+
+  #head_p {
+    font-size: 60%;
+  }
+}
